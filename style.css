@@ -1,0 +1,232 @@
+.title {
+  text-align: center;
+  margin-top: 20px;
+  color: rgb(0, 0, 0);
+  font-family: "SF Pro", Arial, sans-serif;
+}
+.title.active {
+  color: whitesmoke;
+}
+
+body {
+  background-color: #33313178;
+  color: #333;
+}
+
+.calculator-container {
+  border: 5px solid #020202;
+  border-radius: 40.5px;
+  padding: 25px;
+  background-color: #000000b3;
+  width: 380px;
+  height: 640px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  flex-direction: column;
+  font-family: "SF Pro", Arial, sans-serif;
+}
+
+.calculator-container.actived {
+  background-color: rgb(98, 98, 44);
+  color: blue;
+}
+
+/* para deixar a ordem certa */
+.calculator-container button {
+  width: 80px;
+  height: 80px;
+  font-size: 34px;
+  margin: 5px;
+  grid-gap: 5px;
+  color: whitesmoke;
+  background-color: #5a55556b;
+  border-radius: 52px;
+  border-bottom: #050505;
+  box-shadow: 0px 0px 0px rgb(6, 6, 6);
+  font-family: "SF Pro", Arial, sans-serif;
+}
+/* Aonde fica a camera frontal do iphone */
+.calculator-container .Container-cam {
+  width: 200px;
+  height: 30px;
+  position: relative;
+  top: -170px;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  background-color: rgb(0, 0, 0);
+  border: 5px rgb(0, 0, 0);
+}
+
+.display {
+  width: 100%;
+  text-align: right;
+  padding-right: 40px;
+  font-size: 66px;
+  margin-bottom: 25px;
+  color: whitesmoke;
+  font-family: "SF Pro", Arial, sans-serif;
+}
+
+.calculator-container .operator-grey {
+  background-color: rgb(199, 196, 196);
+  color: rgb(0, 0, 0);
+  font-size: 30px;
+  font-family: "SF Pro", Arial, sans-serif;
+}
+
+#zero {
+  font-size: 30px;
+  width: 178px;
+  padding-left: 30px;
+  text-align: left;
+}
+#operator-orange {
+  background-color: orange;
+  color: whitesmoke;
+}
+
+#operator-grey {
+  background-color: rgb(223, 214, 214);
+  color: #000;
+}
+
+.calculator-container .operator-orange {
+  background-color: orange;
+  color: whitesmoke;
+  font-family: "SF Pro", Arial, sans-serif;
+}
+
+.highlight {
+  animation: blink-animation 1s infinite;
+}
+
+@keyframes blink-animation {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.operator-orange.selected {
+  background-color: whitesmoke;
+  color: orange;
+  font-family: "SF Pro", Arial, sans-serif;
+}
+
+.calculator-container .operator-igual {
+  background-color: orange;
+  color: whitesmoke;
+  font-family: "SF Pro", Arial, sans-serif;
+}
+
+.operator-igual {
+  transition: background-color 0.2s, opacity 0.2s;
+}
+
+.operator-igual:active {
+  background-color: rgba(252, 249, 249, 0.818);
+  opacity: 1;
+}
+
+.operator-igual:focus {
+  outline: none;
+}
+
+.operator-igual::before {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.button {
+  transition: background-color 0.3s;
+}
+.button:active {
+  background-color: #716a6a;
+}
+.button {
+  outline: none;
+}
+
+.calculator-container .current-time {
+  position: relative;
+  left: -150px;
+  top: -130px;
+  font-size: 20px;
+  color: whitesmoke;
+  font-family: "SF Pro", Arial, sans-serif;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+@import url("https://fonts.googleapis.com/css2?family=SF+Pro&display=swap");
+
+/* SWITCH MODO ESCURO */
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+  right: -680px;
+  top: 40px;
+  
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+  right: 0;
+  
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #f1eeee;
+  transition: 0.4s;
+  border-radius: 34px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: rgb(249, 249, 249);
+  transition: 0.4s;
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: #2196f3; /* Cor do fundo no modo escuro */
+}
+
+input:checked + .slider:before {
+  transform: translateX(26px);
+}
+
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
