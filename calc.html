@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Calc project</title>
+  </head>
+
+  <body>
+    <h1 class="title">PROJETO CALCULADORA</h1>
+    <br />
+    <div class="container">
+      <div class="container-switch">
+        <label class="switch">
+          <input type="checkbox" id="modeSwitch" />
+          <span class="slider round"></span>
+        </label>
+        <span>Modo Claro</span>
+        <span>Modo Escuro</span>
+      </div>
+    </div>
+    <div class="calculator-container">
+      <div class="display" , id="display">0</div>
+      <div class="current-time" id="current-time"></div>
+      <div class="Container-cam" id="Container-Cam"></div>
+      <div id="buttons-operator">
+        <button class="operator-grey" , id="zerar">AC</button>
+        <button class="operator-grey" , id="mudar">+/-</button>
+        <button class="operator-grey" , id="porcentagem">%</button>
+        <button class="operator-orange" , id="dividir">÷</button>
+        <button class="button">7</button>
+        <button class="button">8</button>
+        <button class="button">9</button>
+        <button class="operator-orange" , id="multiplicar">x</button>
+      </div>
+
+      <div>
+        <button class="button">4</button>
+        <button class="button">5</button>
+        <button class="button">6</button>
+        <button class="operator-orange" , id="subtrair">-</button>
+      </div>
+      <div>
+        <button class="button">1</button>
+        <button class="button">2</button>
+        <button class="button">3</button>
+        <button class="operator-orange" , id="somar">+</button>
+      </div>
+
+      <div>
+        <button id="zero">0</button>
+        <button id="point">,</button>
+        <button class="operator-igual" , id="igual">=</button>
+      </div>
+    </div>
+    <!-- TEMA DARK E LIGHT -->
+
+    <!--JAVASCRIPT-->
+    <script>
+      const modeSwitch = document.getElementById("modeSwitch");
+
+      modeSwitch.addEventListener("change", function () {
+        if (modeSwitch.checked) {
+          document.body.style.backgroundColor = "#000000"; // Alterar cor de fundo para o modo escuro
+        } else {
+          document.body.style.backgroundColor = "#f5f5f5"; // Alterar cor de fundo para o modo claro
+        }
+      });
+    </script>
+    <!--QUERYSELECTORS-->
+
+    <script src="display.js"></script>
+
+    <!-- Data e hora-->
+    <br />
+
+    <script>
+      function updateClock() {
+        var timeContainer = document.getElementById("current-time");
+        var date = new Date();
+        var hours = date.getHours();
+        var minutes = date.getMinutes();
+        var seconds = date.getSeconds();
+
+        hours = hours < 10 ? "0" + hours : hours;
+        minutes = minutes < 10 ? "0" + minutes : minutes;
+
+        var timeString = hours + ":" + minutes;
+
+        timeContainer.textContent = timeString;
+        setTimeout(updateClock, 1000);
+      }
+      updateClock();
+    </script>
+  </body>
+</html>
